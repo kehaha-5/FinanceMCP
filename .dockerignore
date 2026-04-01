@@ -6,7 +6,7 @@ npm-debug.log
 build
 
 # Environment files
-.env
+# .env
 .env.*
 
 # Git
