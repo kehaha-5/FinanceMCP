@@ -5,6 +5,8 @@ WORKDIR /app
 # Install all dependencies (including dev) and build
 COPY package.json package-lock.json tsconfig.json ./
 COPY src ./src
+COPY .env .env
+
 RUN npm ci
 RUN npm run build
 
@@ -21,7 +23,7 @@ RUN npm ci --production --ignore-scripts
 
 # 拷贝构建产物
 COPY --from=builder /app/build ./build
-
+COPY .env .env
 # 确保 appuser 对 /app 有权限
 RUN chown -R appuser:appgroup /app
 
