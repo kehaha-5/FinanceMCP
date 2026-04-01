@@ -50,7 +50,8 @@ export const TUSHARE_CONFIG = {
   },
 
   /** Tushare 服务器地址 */
-  API_URL: "https://api.tushare.pro",
+  API_URL: process.env.TUSHARE_API_URL ?? "https://api.tushare.pro",
+  // API_URL: "https://api.tushare.pro",
 
   /** 超时 ms */
   TIMEOUT: 30000,
